@@ -3,12 +3,12 @@ import tkinter
 import pandas as pd
 import openpyxl
 import numpy as np
-from tkinter import *
-
+#from tkinter import *
+from customtkinter import *
 
 # Assets
 WINDOW_ICON = "Assets/programicon.ico"
-class Aplication(Tk):
+class Aplication(CTk):
     def __init__(self):
         super().__init__()
 
@@ -20,7 +20,8 @@ class Aplication(Tk):
 
         self.minsize(250,300)
         self.resizable = True
-        self.geometry("%dx%d" % (sc_width, sc_height))
+        self.geometry(f'{sc_width}x{sc_height}+{sc_width / 2 - sc_width}x{sc_height / 2 - sc_height}')
+        print(self.geometry())
 
         self.title("Construtor de Tabela de Juros")
 
@@ -28,22 +29,22 @@ class Aplication(Tk):
         MainFrame(self)
         self.mainloop()
 
-class MainFrame(Frame):
+class MainFrame(CTkFrame):
     def __init__(self,parent):
         super().__init__(parent)
 
-        self.configure(background = "#FFFFFF")
+        #self.configure(background = "#FFFFFF")
         self.pack(fill = BOTH, expand = True)
 
         MenuBackground(self)
 
-class MenuBackground(Frame):
+class MenuBackground(CTkFrame):
     def __init__(self,parent):
         super().__init__(parent)
 
-        self.configure(
-            background = "#625f5f",
-        )
+        #self.configure(
+            #background = "#625f5f",
+        #)
         self.pack()
 
 
