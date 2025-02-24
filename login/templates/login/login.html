@@ -20,16 +20,14 @@
 </head>
 <body>
     <div class = "mainDiv">
-        <form action = "{%url 'login:request'%}" method = "post">
+        <form action = "{%url 'login:login_submission'%}" method = "post">
             {% csrf_token %}
             <input type = "email" placeholder = "e-mail"></input>
+            <input type = "password" placeholder = "password"></input>
             <input type = "submit"></button>
         </form>
        
-        <br>
-        <br>
-        <input type = "password" placeholder = "password"></input>
-        <input type = "submit" ></button>
+    
     </div>
 
 </body>
